@@ -7,16 +7,15 @@
             <h1><a href="admin">Vomggot Blog</a></h1>
         </div>
 
-        <div>
-            <p>2020년 4월 24일에 쓴 글입니다</p>
-            <h2><a href="">first Vomggot</a></h2>
-            <p>장고로 프로젝트를 해야하는데 처음 시작하는거에요</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Vom</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        
+        {% for post in posts %}
+        	<div>
+        	<p>published: {{ post.published_date }}</p>
+        	<h1><a bref= "">{{ post.title }}</a></h1>
+        	<p>{{ post.text|linebreaksbr }}</p>
+        	
+        	</div>
+        {% endfor %}
+        
     </body>
 </html>
